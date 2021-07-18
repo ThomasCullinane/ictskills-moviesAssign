@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const MovieHeader = ( { movie, history}) => {
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <Paper component="div" className={classes.root}>
