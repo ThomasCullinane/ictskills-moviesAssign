@@ -6,25 +6,19 @@ import MoviePage from "./pages/movieDetailsPage";
 import MovieReviewPage from "./pages/movieReviewPage";
 
 import FavouriteMoviesPage from "./pages/favouriteMoviesPage";
+import SiteHeader from './components/siteHeader'
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/movies/favourites">Favorites</Link>
-        </li>
-      </ul>
-      <Switch>
-        <Route path="/reviews/:id" component={MovieReviewPage} />
-        <Route exact path="/movies/favourites" component={FavouriteMoviesPage} />
-        <Route path="/movies/:id" component={MoviePage} />
-        <Route exact path="/" component={HomePage} />
-        <Redirect from="*" to="/" />
-      </Switch>
+      <BrowserRouter>
+          <SiteHeader />      {/* New Header  */}
+          <Switch>
+            <Route path="/reviews/:id" component={MovieReviewPage} />
+            <Route exact path="/movies/favourites" component={FavouriteMoviesPage} />
+            <Route path="/movies/:id" component={MoviePage} />
+            <Route exact path="/" component={HomePage} />
+            <Redirect from="*" to="/" />
+          </Switch>
     </BrowserRouter>
   );
 };
