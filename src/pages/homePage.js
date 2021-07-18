@@ -17,15 +17,15 @@ const HomePage = (props) => {
   const movies = data.results;
 
   // Redundant, but necessary to avoid app crashing.
-  const favourites = movies.filter(m => m.favourite)
-  localStorage.setItem('favourites', JSON.stringify(favourites))
-  const addToFavourites = (movieId) => true 
+  const favorites = movies.filter(m => m.favorite)
+  localStorage.setItem('favorites', JSON.stringify(favorites))
+  const addToFavorites = (movieId) => true 
 
   return (
     <PageTemplate
       title="Discover Movies"
       movies={movies}
-      selectFavourite={addToFavourites}
+      selectFavorite={addToFavorites}
     />    
   );
 };
