@@ -1,29 +1,19 @@
 # Assignment - ReactJS app.
 
-Name: ... your name ...
+Name: Thomas Cullinane
 
 ## Overview.
 
-...... State the app concept and objectives. If it's the Movies Fan app extension, only state the additional objectives .........
+Movies Fan app extension, 
+Add page to see similar recommended movies
+Add Cast popup details to movie details page
 
-
-...... A bullet-point list of user features. If it's the Movies Fan app extension, only list new/modified features...... 
- 
- + Feature 1
- + Feature 2
- + Feature 3
- + etc
- + etc
 
 ## Setup requirements.
 
 ...... A brief explanation (to a third party) of any non-standard setup steps necessary to run your app/client locally (after cloning the repo) ........
 
 ## API Data Model.
-
-..... [For non-Movies Fan app] Insert a diagram of the API's data model (see example below) AND/OR a sample(s) of the JSON documents returned by its endpoints ........
-
-![][model]
 
 ......[For the Movies Fan app] Specify the additional TMDB endpoints used and show sample responses, in JSON .........
 
