@@ -19,11 +19,11 @@ const useStyles = makeStyles({
 
 export default function MovieCast({ movie }) {
   const classes = useStyles();
-  const [cast, setCast] = useState([]);
+  const [castL, setCast] = useState([]);
 
   useEffect(() => {
-    getMovieCast(movie.id).then((cast) => {
-      setCast(cast);
+    getMovieCast(movie.id).then((castL) => {
+      setCast(castL);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -33,16 +33,14 @@ export default function MovieCast({ movie }) {
       <Table className={classes.table} aria-label="cast table">
         <TableHead>
           <TableRow>
-            <TableCell >Charachter</TableCell>
-            <TableCell align="center">Actor</TableCell>
+            <TableCell >Character</TableCell>
+            <TableCell >Actor</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {cast.map((c) => (
-            <TableRow key={c.cast.id}>
-              <TableCell component="th" scope="row">
-                {c.charachter}
-              </TableCell>
+          {castL.slice(0,10).map((c) => (
+            <TableRow key={c.id}>
+              <TableCell component="th" scope="row">{c.character}</TableCell>
               <TableCell >{c.name}</TableCell>
             </TableRow>
           ))}

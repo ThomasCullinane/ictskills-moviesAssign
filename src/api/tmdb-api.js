@@ -44,14 +44,14 @@ export const getMovies = async () => {
     return response.json();
   };
 
-  export const getMovieCast = (id) => {
+  export const getMovieCast = async ( id ) => {
     return fetch(
       `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_TMDB_KEY}`
     )
       .then((res) => res.json())
       .then((json) => {
-         console.log(json.results);
-        return json.results;
+         console.log(json.cast);
+        return json.cast;
       });
   };
 
@@ -85,7 +85,7 @@ export const getMovies = async () => {
     )
       .then((res) => res.json())
       .then((json) => {
-         console.log(json.results);
+        // console.log(json.results);
         return json.results;
       });
   };

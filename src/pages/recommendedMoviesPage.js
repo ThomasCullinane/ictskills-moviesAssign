@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import PageTemplate from "../components/templateMovieListPage";
 import { useQuery } from 'react-query'
 import Spinner from '../components/spinner'
@@ -38,4 +39,4 @@ const RecommendedPage = (props) => {
 );
 };
 
-export default RecommendedPage;
+export default withRouter(RecommendedPage);
