@@ -7,9 +7,15 @@ import StarRate from "@material-ui/icons/StarRate";
 import NavigationIcon from "@material-ui/icons/Navigation";
 import Fab from "@material-ui/core/Fab";
 import Typography from "@material-ui/core/Typography";
+import IconButton from "@material-ui/core/IconButton";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
-import MovieReviews from "../movieReviews"
+import MovieReviews from "../movieReviews";
+import MovieCast from "../movieCastList";
+import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
+
+import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,15 +30,15 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(0.5),
   },
   fab: {
-    position: "fixed",
-    bottom: theme.spacing(2),
-    right: theme.spacing(2),
+    position: 'static',
+    margin: theme.spacing(2)
   },
 }));
 
 const MovieDetails = ({ movie }) => {
   const classes = useStyles();
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [castDrawerOpen, setCastDrawerOpen] = useState(false);
 
   return (
     <>
@@ -76,7 +82,24 @@ const MovieDetails = ({ movie }) => {
           </li>
         ))}
       </Paper>
+      <Paper>
+       <Button variant="outlined" size="medium" color="primary">
+          <Link to={`/movies/${movie.id}/recommended`}> 
+             SImilar Recommended
+          </Link>
+        </Button>
+      </Paper>
 
+      <div>
+      <Fab
+        color="secondary"
+        variant="extended"
+        onClick={() =>setCastDrawerOpen(true)}
+        className={classes.fab}
+      >
+        <NavigationIcon />
+        Cast
+      </Fab>
       <Fab
         color="secondary"
         variant="extended"
@@ -86,9 +109,16 @@ const MovieDetails = ({ movie }) => {
         <NavigationIcon />
         Reviews
       </Fab>
+      </div>
+
+      <Drawer anchor="bottom" open={castDrawerOpen} onClose={() => setCastDrawerOpen(false)}>
+        <MovieCast movie={movie} />
+      </Drawer>
+      
       <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
         <MovieReviews movie={movie} />
       </Drawer>
+      
     </>
   );
 };
