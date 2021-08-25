@@ -43,7 +43,7 @@ Credits
 ![][CastList]
 >Shows Movie Details with Cast list Drawer
 
-![][Recommendations]
+![][Recommended]
 >Shows Recommendations based on selected movie
 
 ### Routing.
