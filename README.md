@@ -43,7 +43,7 @@ Credits
 
 ### Routing.
 
-'<Route exact path="/movies/:id/recommended" component={RecommendedMoviesPage} />'
+Route exact path="/movies/:id/recommended" component={RecommendedMoviesPage} /
 
 ## Independent learning (If relevant).
 
